@@ -1,18 +1,13 @@
-# 小怪獸放電所｜排班系統靜態網站版
+# 小怪獸放電所 V5 排班系統
 
-## 現況
-Supabase 雲端專案已建立，資料庫與員工管理函式已部署。前端網頁需要透過 GitHub Pages 等靜態網頁服務發布。
+V5 增加綠色小怪獸主題、大字體，以及店長編輯員工姓名／職稱／帳號／重設密碼。
 
-## GitHub Pages 發布方式
-1. 在 GitHub 登入，建立 **Public** Repository，例如 `monster-roster`。（注意：Public 網站原始碼任何人可見，切勿放私密 API 金鑰）
-2. 將 `index.html`、`config.js`、`manifest.webmanifest` 上傳到 repository 根目錄。不要上傳後端私密金鑰。
-3. 進入 Settings → Pages → Build and deployment → Deploy from a branch，選 main / (root)，按 Save。
-4. 等 GitHub 顯示網站網址，開啟後輸入 `shop0129@gmail.com` 與自己設定的密碼，點「首次註冊店長」。
-5. 到 Gmail 開啟 Supabase 寄來的確認信，確認後回到登入畫面。
-6. 若驗證信跳轉至錯誤網站，需在 Supabase Authentication → URL Configuration，將 GitHub Pages 網址設為 Site URL，並加入 Redirect URLs。
+## 更新
+1. 將 index.html、config.js、manifest.webmanifest、monster-mascot.png 複製到 GitHub monster-roster 專案根目錄（覆蓋舊版）。
+2. GitHub Desktop 執行 Commit to main、Push origin。
+3. 開啟 https://shop0129.github.io/monster-roster/ ，用 Ctrl+Shift+R 強制重新整理。
+4. 店長在員工管理點「編輯資料」。密碼留白表示不修改。
 
-## 安全
-`config.js` 僅包含 Supabase 公開 publishable key（適合前端公開），不包含 service_role。資料表已設定 RLS，員工只能讀取自己的班次；店長才可修改班次。
+雲端 manage-employee 函式需要 V5 版本才能更新員工。請勿將 service_role 或其他私密金鑰放進 GitHub。
 
-## 注意
-目前尚未完成真實帳號登入及員工流程端到端驗收。請先用一位測試員工，確認排班新增、登入只見自己班次、停用帳號流程，再正式使用。
+店長 Email 登入維持不變。員工帳號採 username@staff.example.com 內部對應，並非可收信的 Email。不能靠信箱找回密碼，請由店長重設。
