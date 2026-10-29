@@ -1,1 +1,6 @@
-小怪獸放電所 V5.2：店長自改密碼、時薪薪資試算、固定排班範本、請假審核。員工仍使用至少8字元密碼；4位 PIN 未啟用，需另設安全驗證及限流。更新 GitHub 的 index.html 與其他檔案，勿包含任何密碼或 service_role 金鑰。
+小怪獸放電所 V5.3 排班管理員權限版
+更新方式：將本目錄 index.html、config.js、manifest.webmanifest、monster-mascot.png 複製到 GitHub Desktop monster-roster 專案，再 Commit to main / Push origin。
+店長：在員工管理按「🔒 不可排班」可授權員工為排班管理員；再次點選可取消。
+排班管理員：可查看所有人的班次、排班備註、新增修改刪除班次、複製下一週、儲存與套用固定範本。
+不能修改員工帳號/密碼、時薪、人員權限或店長資料。
+請登出並重新登入被授權的員工帳號，以更新權限。
